@@ -17,8 +17,8 @@ const UserPage = async ({ params }) => {
   const email = session.user.email;
   const username = email; // Assuming the username is the email for this example
   
-  console.log(`Params username: ${params.username}`);
-  console.log(`Session email: ${email}`);
+  // console.log(`Params username: ${params.username}`);
+  // console.log(`Session email: ${email}`);
 
  
    

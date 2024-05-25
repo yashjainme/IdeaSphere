@@ -31,6 +31,7 @@ const Navbar = () => {
                 width={230}
                 height={45}
                 className="invert"
+                priority
               />
             </Link>
           </div>
