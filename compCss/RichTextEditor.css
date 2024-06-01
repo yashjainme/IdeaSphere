@@ -1,0 +1,30 @@
+.quill{
+    height: 88vh;
+}
+
+.ql-container{
+    height: 85%;
+}
+
+
+
+/* quillCustomStyles.css */
+/* Override default styles or add new styles */
+
+/* Example: Change the color of the toolbar icons */
+.ql-snow .ql-picker.ql-header .ql-picker-label::before {
+    color: #007bff; /* Change the color to your desired value */
+  }
+  
+  /* Example: Change the background color of the editor */
+  .ql-snow .ql-editor {
+    background-color: #f8f9fa; /* Change the color to your desired value */
+  }
+  
+  /* Example: Add a border around the editor */
+  .ql-snow .ql-container {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+  }
+  
+  /* Add more styles as needed */

@@ -27,6 +27,7 @@ const authOptions = {
           image: user.image,
           provider: account.provider,
           providerAccountId: account.providerAccountId,
+          blogs: [], // Initialize the blogs field as an empty array
         });
       }
 
@@ -41,3 +42,4 @@ const handler = NextAuth({
 });
 
 export { handler as GET, handler as POST, authOptions };
+

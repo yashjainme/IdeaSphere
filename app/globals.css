@@ -2,3 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+/* globals.css */
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #1a1a1a; /* Color of the track (background) */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #444; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners for the thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #666; /* Color of the scrollbar thumb on hover */
+  }
+  
+
+  @import 'react-quill/dist/quill.snow.css';
+  @import 'react-quill/dist/quill.bubble.css';
+
+
+  /* Body and HTML Styles */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+  }
