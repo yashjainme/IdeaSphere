@@ -3,8 +3,11 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import clientPromise from '@/lib/mongodb';
 import { ObjectId } from 'mongodb';
 import DOMPurify from "isomorphic-dompurify";
+import '../../../../compCss/RichTextEditor.css'
 
 const BlogDetailPage = async ({ params }) => {
+
+  console.log(params)
   const session = await getServerSession(authOptions);
   
   if (!session) {
@@ -20,11 +23,11 @@ const BlogDetailPage = async ({ params }) => {
     blog = await blogsCollection.findOne({ _id: ObjectId.createFromHexString(params.id) });
   } catch (error) {
     console.error('Error fetching blog:', error);
-    return { notFound: true };
+    return "Not Found";
   }
 
   if (!blog) {
-    return { notFound: true };
+    return "Not Found"
   }
 
 

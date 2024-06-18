@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "formidable": "^3.5.1",
+    "imgur": "^2.4.2",
     "isomorphic-dompurify": "^2.11.0",
     "mongodb": "^6.6.1",
+    "multer": "^1.4.5-lts.1",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
     "quill": "^2.0.2",
