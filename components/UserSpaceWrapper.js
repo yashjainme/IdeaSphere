@@ -60,7 +60,7 @@ const UserSpaceWrapper = ({ session, usernameParam }) => {
 
   if (decodedUsername !== email) {
     // Render preview of other user's blogs
-    return <div>Preview of {decodedUsername}'s blogs
+    return <div>{`Preview of ${decodedUsername}\u2019s blogs`}
       <div className="flex flex-wrap justify-center gap-4">
       {otherUserBlogs.length > 0 ? (
         otherUserBlogs.map((blog) => (

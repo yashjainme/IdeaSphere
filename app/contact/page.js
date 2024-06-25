@@ -6,7 +6,7 @@ const ContactPage = () => {
       <h1 className="text-5xl font-bold mb-8" style={{ fontFamily: 'monospace' }}>Contact Us</h1>
       <div className="max-w-3xl text-center">
         <p className="mb-4 text-xl" style={{ fontFamily: 'monospace' }}>
-          We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out to us.
+          {"We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out to us."}
         </p>
         <p className="mb-4" style={{ fontFamily: 'monospace' }}>
           You can contact us through the following channels:
