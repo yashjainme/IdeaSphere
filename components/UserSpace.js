@@ -48,7 +48,7 @@ const UserSpace = ({ session }) => {
     <div className="container mx-auto min-h-screen p-4 bg-gray-100">
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold text-gray-800 animate-fade-in">
-          {isNewUser ? 'Welcome' : 'Welcome back'}, {session.user.name}
+          {isNewUser ? "Welcome" : "Welcome back"}, {session.user.name}
         </h1>
         <div className="relative">
           <button
