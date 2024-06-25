@@ -1,6 +1,3 @@
-
-
-// UserBlogs.js
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
@@ -38,7 +35,11 @@ const UserBlogs = ({ username }) => {
                 <h2 className="text-xl font-bold text-center mb-4">
                   {blog.projectName}
                 </h2>
-                <p className="text-center">{blog.description}</p>
+                <p className="text-center">
+                  {blog.description.length > 50
+                    ? `${blog.description.substring(0, 50)}...`
+                    : blog.description}
+                </p>
               </div>
             </div>
           </Link>
