@@ -1,12 +1,10 @@
-
 // app/api/getUserData/route.js
 
 import clientPromise from "@/lib/mongodb";
 
 export async function GET(request) {
   try {
-    const { searchParams } = new URL(request.url);
-    const email = searchParams.get('email');
+    const email = request.nextUrl.searchParams.get('email');
 
     const client = await clientPromise;
     const db = client.db('IdeaSphereBlog');
