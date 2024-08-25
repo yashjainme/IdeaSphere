@@ -59,8 +59,3 @@ export async function PUT(req) {
   }
 }
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
