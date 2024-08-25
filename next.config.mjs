@@ -1,16 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Other configuration options
-    async redirects() {
-      return [
-        {
-          source: '/@:username',
-          destination: '/user/:username',
-          permanent: true,
-        },
-      ];
-    },
-  };
+  // Existing configuration
+  async redirects() {
+    return [
+      {
+        source: '/@:username',
+        destination: '/user/:username',
+        permanent: true,
+      },
+    ];
+  },
   
-  export default nextConfig;
-  
+  // Add this new configuration for images
+  images: {
+    domains: ['i.imgur.com', 'images.pexels.com'],
+  },
+};
+
+export default nextConfig;

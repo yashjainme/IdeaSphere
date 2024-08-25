@@ -29,6 +29,7 @@ export async function GET(request) {
           projectName: 1,
           description: 1,
           content: 1,
+          coverImageUrl: 1,
           createdAt: 1,
           userId: 1,
         },
