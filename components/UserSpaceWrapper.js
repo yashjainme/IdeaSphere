@@ -69,7 +69,7 @@ const UserSpaceWrapper = ({ session, usernameParam }) => {
               >
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                   <div className="relative h-48">
-                    {console.log(blog)}
+                    {/* {console.log(blog)} */}
                     <Image
                       src={blog.coverImageUrl || '/default-cover.jpg'}
                       alt={blog.projectName}
