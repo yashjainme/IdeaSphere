@@ -8,7 +8,7 @@ const UserPage = async ({ params }) => {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    return redirect('/api/auth/signin');
+    return redirect('/create-blog');
   }
 
   const email = session.user.email;

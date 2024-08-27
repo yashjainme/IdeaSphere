@@ -15,6 +15,7 @@ const CreateBlogPage = () => {
   const projectName = searchParams.get('projectName');
   const description = searchParams.get('description');
   const randomId = searchParams.get('randomId');
+  const [isSaved, setIsSaved] = useState(false);
 
   const [content, setContent] = useState('');
   const [coverImageFile, setCoverImageFile] = useState(null);
@@ -37,18 +38,27 @@ const CreateBlogPage = () => {
       formData.append('coverImage', coverImageFile);
     }
 
-    const res = await fetch('/api/createBlog', {
-      method: 'POST',
-      body: formData,
-    });
+    setIsSaved(true);
+    try{
 
-    if (res.ok) {
-      toast.success('Blog Saved');
-      setTimeout(() => {
-        router.push(`/${session.user.email}`);
-      }, 1500);
-    } else {
-      toast.error('Failed to save blog');
+      const res = await fetch('/api/createBlog', {
+        method: 'POST',
+        body: formData,
+      });
+      
+      if (res.ok) {
+        toast.success('Blog Saved');
+        setTimeout(() => {
+          router.push(`/${session.user.email}`);
+        }, 1500);
+      } else {
+        toast.error('Failed to save blog');
+      }
+    }catch (error) {
+      console.error('Error updating blog:', error);
+      toast.error('An error occurred while updating the blog');
+    }finally {
+      setIsSaved(false);
     }
   };
 
@@ -81,11 +91,17 @@ const CreateBlogPage = () => {
 />
         <RichTextEditor value={content} onChange={setContent} />
         <button
-          className='bg-black text-white px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gray-300 hover:text-black w-20'
-          onClick={handleSave}
-        >
-          Save
-        </button>
+              className='bg-black text-white px-4 py-2 rounded-md transition-colors duration-300 hover:bg-gray-300 hover:text-black w-20 disabled:opacity-50 disabled:cursor-not-allowed'
+              onClick={handleSave}
+              disabled={isSaved}
+            >
+              {isSaved ? (
+                <svg className="animate-spin h-5 w-5 text-white mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              ) : 'Save'}
+            </button>
       </div>
     </div>
   );

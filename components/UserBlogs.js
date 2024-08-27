@@ -54,14 +54,14 @@ const UserBlogs = ({ username }) => {
               href={`/${username}/blogs/${blog._id}`}
               
             >
-              <div className="bg-gray-800 text-white px-4 py-6 rounded-md flex flex-col justify-between h-36 w-48 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:bg-gray-700 animate-fade-in">
+              <div className="bg-gray-900 text-white px-4 py-6 rounded-md flex flex-col justify-between h-36 w-48 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:bg-gray-700 animate-fade-in">
                 <div>
                   <h2 className="text-xl font-bold text-center mb-4">
                     {blog.projectName}
                   </h2>
                   <p className="text-center">
-                    {blog.description.length > 50
-                      ? `${blog.description.substring(0, 50)}...`
+                    {blog.description.length > 30
+                      ? `${blog.description.substring(0, 30)}...`
                       : blog.description}
                   </p>
                 </div>

@@ -94,7 +94,7 @@ const Navbar = () => {
             ) : (
               <button
                 className="bg-yellow-500 text-black px-3 py-1 text-sm rounded-md transition-colors duration-300 hover:bg-yellow-600 hover:text-white"
-                onClick={() => signIn()}
+                onClick={() => signIn("google")}
               >
                 Sign In
               </button>
@@ -140,7 +140,7 @@ const Navbar = () => {
           ) : (
             <button
               className="w-full bg-yellow-500 text-black py-2 rounded-md transition-colors duration-300 hover:bg-yellow-600 hover:text-white"
-              onClick={() => signIn()}
+              onClick={() => signIn("google")}
             >
               Sign In
             </button>

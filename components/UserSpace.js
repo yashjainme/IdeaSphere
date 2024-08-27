@@ -84,15 +84,17 @@ const UserSpace = ({ session }) => {
           )}
         </div>
       </div>
-      <div className="bg-white p-8 rounded-lg shadow-md flex flex-col h-full">
+      <div className="bg-gray-800 p-8 rounded-lg shadow-md flex flex-col h-full">
         <div className="flex flex-wrap justify-center gap-4">
           <UserBlogs username={username} />
           <button
-            onClick={() => setIsModalOpen(true)}
-            className="bg-black text-white px-4 py-2 rounded-md flex items-center justify-center h-36 w-48 transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in"
-          >
-            <span className="mr-2 text-2xl">+</span> Create New Blog
-          </button>
+  onClick={() => setIsModalOpen(true)}
+  className="bg-yellow-500 text-black px-4 py-2 rounded-md flex flex-col items-center justify-center h-36 w-48 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
+>
+  <span className="text-3xl mb-2">+</span>
+  <span className="text-lg font-semibold">Create New Blog</span>
+</button>
+
         </div>
       </div>
       <CreateBlogModal
