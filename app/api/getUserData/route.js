@@ -1,26 +1,22 @@
+import { NextResponse } from 'next/server';
 import clientPromise from "@/lib/mongodb";
+
+export const dynamic = 'force-dynamic'; // This line tells Next.js that this is a dynamic route
 
 export async function GET(request) {
   try {
-    // Use the URL object to parse query parameters
-    const url = new URL(request.url);
-    const email = url.searchParams.get('email');
-
+    const { searchParams } = new URL(request.url);
+    const email = searchParams.get('email');
     const client = await clientPromise;
     const db = client.db('IdeaSphereBlog');
     const userCollection = db.collection('users');
-
     const user = await userCollection.findOne({ email });
-
     if (!user) {
-      return new Response(null, { status: 404 });
+      return NextResponse.json(null, { status: 404 });
     }
-
-    return new Response(JSON.stringify(user), {
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return NextResponse.json(user);
   } catch (error) {
     console.error('Error fetching user data:', error);
-    return new Response('Failed to fetch user data', { status: 500 });
+    return NextResponse.json({ error: 'Failed to fetch user data' }, { status: 500 });
   }
 }

@@ -1,11 +1,18 @@
+
+
+
+
+
+import { NextResponse } from 'next/server';
 import clientPromise from "@/lib/mongodb";
+
+export const dynamic = 'force-dynamic';
 
 export async function GET(request) {
   try {
-    // Use the URL object to parse query parameters
-    const url = new URL(request.url);
-    const email = url.searchParams.get('email');
 
+    const { searchParams } = new URL(request.url);
+    const email = searchParams.get('email');
     const client = await clientPromise;
     const db = client.db('IdeaSphereBlog');
     const userCollection = db.collection('users');
@@ -41,6 +48,6 @@ export async function GET(request) {
     });
   } catch (error) {
     console.error('Error fetching blog data:', error);
-    return new Response('Failed to fetch blog data', { status: 500 });
+    return NextResponse.json({ error: 'Failed to fetch blog data' }, { status: 500 });
   }
 }
