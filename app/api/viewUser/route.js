@@ -1,10 +1,10 @@
-// app/api/getUserData/viewUser.js
-
 import clientPromise from "@/lib/mongodb";
 
 export async function GET(request) {
   try {
-    const email = request.nextUrl.searchParams.get('email');
+    // Use the URL object to parse query parameters
+    const url = new URL(request.url);
+    const email = url.searchParams.get('email');
 
     const client = await clientPromise;
     const db = client.db('IdeaSphereBlog');
@@ -20,9 +20,9 @@ export async function GET(request) {
 
     // Fetch blogs of other users
     const otherUserBlogs = await blogsCollection.aggregate([
-      { $match: { userId: otherUser._id } }, // Match the current user's blogs
-      { $sort: { createdAt: -1 } }, // Sort by creation date, newest first
-      { $limit: 10 }, // Limit to the top 10 blogs (or adjust as needed)
+      { $match: { userId: otherUser._id } },
+      { $sort: { createdAt: -1 } },
+      { $limit: 10 },
       {
         $project: {
           _id: 1,
