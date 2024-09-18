@@ -19,10 +19,7 @@ export async function GET(req) {
 
    
 
-    // Log a sample blog (first one) for debugging
-    if (blogs.length > 0) {
-      console.log('Sample blog:', JSON.stringify(blogs[0], null, 2));
-    }
+   
 
     return NextResponse.json(blogs, { status: 200 });
   } catch (error) {

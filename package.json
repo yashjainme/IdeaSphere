@@ -12,7 +12,7 @@
     "imgur": "^2.4.2",
     "isomorphic-dompurify": "^2.11.0",
     "mongodb": "^6.6.1",
-    "next": "14.2.3",
+    "next": ">=14.2.10",
     "next-auth": "^4.24.7",
     "quill": "^2.0.2",
     "quill-image-resize-module": "^3.0.0",

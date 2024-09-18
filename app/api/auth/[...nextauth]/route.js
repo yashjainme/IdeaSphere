@@ -15,7 +15,7 @@ const authOptions = {
       const client = await clientPromise;
       const db = client.db('IdeaSphereBlog');
       const userCollection = db.collection('users');
-      console.log(user)
+      // console.log(user)
       // Check if the user already exists in the database
       const existingUser = await userCollection.findOne({ email: user.email });
 
