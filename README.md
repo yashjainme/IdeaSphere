@@ -5,7 +5,7 @@ IdeaSphere is a dynamic blogging platform designed to empower users to create, m
 ## Features
 
 - **User Authentication:** Secure user authentication with NextAuth, supporting multiple providers.
-- **Rich Text Editor:** A powerful Quill-based editor for creating detailed blog posts with various formatting options.
+- **Rich Text Editor:** A powerful Quill-based editor for creating detailed blog posts with various formatting options .
 - **Image Upload:** Seamless image uploads via Imgur for enriching blog content.
 - **Personal User Space:** Each user has a dedicated space to manage their blogs and view their content.
 - **Community Engagement:** Users can explore and view blogs from other members of the community.
